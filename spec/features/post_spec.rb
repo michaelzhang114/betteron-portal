@@ -3,10 +3,14 @@
 require 'rails_helper'
 
 describe 'navigate' do
+
+  # make sure user is signed in
   before do
     user = User.create(email:"test@test.com", password:"asdfasdf", first_name:"josh", last_name:"snow")
     login_as(user, :scope => :user)
   end
+
+  # can see all posts
   describe 'index' do
     it 'can be reached successfully' do
       visit posts_path
@@ -39,5 +43,4 @@ describe 'navigate' do
       expect(User.last.posts.last.rationale).to eq("User Association")
     end
   end
-
 end

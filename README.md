@@ -8,8 +8,8 @@ Development version of the BetterOn Portal
 
 ## Models
 - Team
-- User
-- Post (nested in User)
+- x User
+- x Post (nested in User)
 - Video (nested in Post)
 
 ## Features
@@ -18,3 +18,5 @@ Development version of the BetterOn Portal
 - Users have tailored GIF profile picture
 - Branded environment
 - Upload to YouTube from portal
+
+## To-do
