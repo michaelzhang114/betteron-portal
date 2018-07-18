@@ -7,5 +7,14 @@ Development version of the BetterOn Portal
 - Go to 127.0.0.1:3001 in Chrome
 
 ## Models
+- Team
+- User
+- Post (nested in User)
+- Video (nested in Post)
 
 ## Features
+- Coaches can access by team
+- Admin can switch user roles and assign teams
+- Users have tailored GIF profile picture
+- Branded environment
+- Upload to YouTube from portal
