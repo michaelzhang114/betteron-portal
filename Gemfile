@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise', '~> 4.4', '>= 4.4.3'
-
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 
 
 # Use Capistrano for deployment

@@ -3,12 +3,16 @@
 require 'rails_helper'
 
 describe 'navigate' do
+  before do
+    user = User.create(email:"test@test.com", password:"asdfasdf", first_name:"josh", last_name:"snow")
+    login_as(user, :scope => :user)
+  end
   describe 'index' do
     it 'can be reached successfully' do
       visit posts_path
       expect(page.status_code).to eq(200)
     end
-    it 'it has a title of Posts' do
+    it 'has a title of Posts' do
       visit posts_path
       expect(page).to have_content(/Posts/)
     end
@@ -17,8 +21,6 @@ describe 'navigate' do
   # mimic signing in a user, create a post, check to see if user is associated with that post
   describe 'creation' do
     before do
-      user = User.create(email:"test@test.com", password:"asdfasdf", first_name:"josh", last_name:"snow")
-      login_as(user, :scope => :user)
       visit new_post_path
     end
     it 'has a new form that can be reached' do
