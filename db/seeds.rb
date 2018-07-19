@@ -10,4 +10,9 @@
   Post.create(date: Date.today, rationale: "#{post} rationale content")
 end
 
+100.times do |team|
+  Team.create(name: "#{team} team name")
+end
+
 puts "100 posts have been created"
+puts "100 teams have been created"
