@@ -6,8 +6,9 @@ describe 'navigate' do
 
   # make sure user is signed in
   before do
-    user = User.create(email:"test@test.com", password:"asdfasdf", first_name:"josh", last_name:"snow")
-    login_as(user, :scope => :user)
+    @team = Team.create(name: "blah")
+    @user = User.create(email:"test@test.com", password:"asdfasdf", first_name:"josh", last_name:"snow", team: Team.last)
+    login_as(@user, :scope => :user)
   end
 
   # can see all teams
@@ -21,4 +22,20 @@ describe 'navigate' do
       expect(page).to have_content(/Teams/)
     end
   end
+
+  # mimic signing in a user, create a team
+  describe 'creation' do
+    it 'has a new form that can be reached' do
+      visit new_team_path
+      expect(page.status_code).to eq(200)
+    end
+    it 'can be created from new form page' do
+      visit new_team_path
+      fill_in 'team[name]', with: "Some team"
+      click_on "Save"
+      expect(page).to have_content("Some team")
+    end
+  end
+
+
 end
