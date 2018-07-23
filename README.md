@@ -6,10 +6,14 @@ Development version of the BetterOn Portal
 - Run: bundle exec puma -C config/puma.rb -b tcp://127.0.0.1:3001
 - Go to 127.0.0.1:3001 in Chrome
 
+## If didn't shutdown properly
+- Restart postgres server
+- brew services restart postgresql
+
 ## Models
 - Team
 - x User
-- x Post (nested in User)
+- x Post
 - Video (nested in Post)
 
 ## Features
