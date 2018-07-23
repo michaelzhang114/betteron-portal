@@ -6,8 +6,8 @@ describe 'navigate' do
 
   # make sure user is signed in
   before do
-    @team = Team.create(name: "blah")
-    @user = User.create(email:"test@test.com", password:"asdfasdf", first_name:"josh", last_name:"snow", team: Team.last)
+    @team = FactoryGirl.create(:team)
+    @user = FactoryGirl.create(:user)
     login_as(@user, :scope => :user)
   end
 
@@ -22,10 +22,10 @@ describe 'navigate' do
       expect(page).to have_content(/Posts/)
     end
     it 'has a list of posts' do
-      post1 = Post.create(date: Date.today, rationale: "post1", user_id: @user.id)
-      post2 = Post.create(date: Date.today, rationale: "post2", user_id: @user.id)
+      post1 = FactoryGirl.create(:post)
+      post2 = FactoryGirl.create(:second_post)
       visit posts_path
-      expect(page).to have_content(/post1|post2/)
+      expect(page).to have_content(/rationale|content/)
     end
   end
 

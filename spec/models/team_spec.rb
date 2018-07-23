@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Team, type: :model do
   describe "creation" do
     before do
-      @team = Team.create(name: "new team")
+      @team = FactoryGirl.create(:team)
     end
 
     it "can be created" do
