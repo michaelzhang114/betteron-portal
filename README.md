@@ -16,8 +16,8 @@ Development version of the BetterOn Portal
 
 ## Models
 - Team
-- x User
-- x Post
+- User
+- Post
 - Video (nested in Post)
 
 ## Features
@@ -29,3 +29,4 @@ Development version of the BetterOn Portal
 
 ## To-do
 - Make the nested routes test more rigorous
+- Test for permissions
