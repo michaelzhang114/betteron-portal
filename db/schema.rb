@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180719211729) do
+ActiveRecord::Schema.define(version: 20180724150834) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,16 @@ ActiveRecord::Schema.define(version: 20180719211729) do
     t.index ["team_id"], name: "index_users_on_team_id"
   end
 
+  create_table "videos", force: :cascade do |t|
+    t.text "heading"
+    t.text "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "post_id"
+    t.index ["post_id"], name: "index_videos_on_post_id"
+  end
+
   add_foreign_key "posts", "users"
   add_foreign_key "users", "teams"
+  add_foreign_key "videos", "posts"
 end
