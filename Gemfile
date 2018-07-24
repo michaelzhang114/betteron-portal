@@ -35,6 +35,7 @@ gem 'bootstrap', '~> 4.1.2'
 gem 'factory_girl_rails', '~> 4.9'
 gem 'pundit', '~> 2.0'
 gem 'puma', '~> 3.12'
+gem 'gritter', '~> 1.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
