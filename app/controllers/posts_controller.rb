@@ -33,7 +33,8 @@ class PostsController < ApplicationController
   end
 
   def show
-    # @post = policy_scope(Post).find(post_params[:id])
+    set_post
+    authorize @post
   end
 
   private

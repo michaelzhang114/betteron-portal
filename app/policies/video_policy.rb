@@ -1,9 +1,9 @@
-class PostPolicy < ApplicationPolicy
+class VideoPolicy < ApplicationPolicy
   def update?
-    record.user_id == user.id
+    record.post.member?(user)
   end
   def show?
-    record.user_id == user.id
+    record.post.member?(user)
   end
 
   class Scope

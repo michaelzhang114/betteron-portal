@@ -37,6 +37,7 @@ gem 'pundit', '~> 2.0'
 gem 'puma', '~> 3.12'
 gem 'gritter', '~> 1.2'
 
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -50,6 +51,7 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'bullet', '~> 5.7', '>= 5.7.5'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
