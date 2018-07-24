@@ -2,7 +2,7 @@
   <ul class="nav nav-tabs small justify-content-end" role="tablist">
       <li class="nav-link <%= active(root_path)%>"><%= link_to "Home", root_path %></li>
       <li class="nav-link <%= active(posts_path)%>"><%= link_to "Lessons", posts_path %></li>
-      <li class="nav-link <%= active(edit_user_registration_path)%>"><%= link_to "Account", edit_user_registration_path %></li>
+      <li class="nav-link"><%= link_to "Account", root_path %></li>
       <li class="nav-link"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
   </ul>
 </div>
