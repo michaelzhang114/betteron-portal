@@ -17,15 +17,23 @@ describe 'navigate' do
       visit posts_path
       expect(page.status_code).to eq(200)
     end
-    it 'has a title of Posts' do
+    it 'has a title of lesson' do
       visit posts_path
-      expect(page).to have_content(/Posts/)
+      expect(page).to have_content(/Lessons/)
     end
-    it 'has a list of posts' do
+    it 'cannot see posts created by different user' do
       post1 = FactoryGirl.create(:post)
       post2 = FactoryGirl.create(:second_post)
       visit posts_path
-      expect(page).to have_content(/rationale|content/)
+      expect(page).to have_no_content(/rationale|content/)
+    end
+    it 'can see posts created by current user' do
+      @index_user = User.create(email:"test@test.com", password: "asdfasdf", first_name: "joe", last_name: "bloggs", team_id: @team.id)
+      logout(:user)
+      login_as(@index_user, :scope => :user)
+      post3 = Post.create(date: Date.today, rationale: "alalala", user_id: @index_user.id)
+      visit posts_path
+      expect(page).to have_content(/alalala/)
     end
   end
 
@@ -54,15 +62,19 @@ describe 'navigate' do
   # editing a post
   describe 'edit' do
     before do
-      @post = FactoryGirl.create(:post)
+      @team = FactoryGirl.create(:team)
+      @edit_user = User.create(email:"test@test.com", password: "asdfasdf", first_name: "joe", last_name: "bloggs", team_id: @team.id)
+      logout(:user)
+      login_as(@edit_user, :scope => :user)
+      @edit_post = Post.create(date: Date.today, rationale: "blah", user_id: @edit_user.id)
     end
     it 'can be reached by clicking edit on index page' do
       visit posts_path
-      click_link("edit_#{@post.id}") #looking for id instead of text 'edit'
+      click_link("edit_#{@edit_post.id}") #looking for id instead of text 'edit'
       expect(page.status_code).to eq(200)
     end
     it 'can be edited' do
-      visit edit_post_path(@post)
+      visit edit_post_path(@edit_post)
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: "edited content"
       click_on "Save"

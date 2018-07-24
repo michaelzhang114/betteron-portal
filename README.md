@@ -26,7 +26,7 @@ Development version of the BetterOn Portal
 - Lessons can act as checkpoints, thus gamifying the experience
 - Possibly having courses->lessons->videos?
 - Discuss a "review functionality"
-- Coaches can access by team
+- Coaches can access team
 - Admin can assign users with different permissions and distribute teams
 - Users have tailored GIF for videos
 - Branded environment by team (give team feel with company colors)
