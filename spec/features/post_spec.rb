@@ -50,4 +50,14 @@ describe 'navigate' do
       expect(User.last.posts.last.rationale).to eq("User Association")
     end
   end
+
+  describe 'edit' do
+    it 'can be reached by clicking edit on index page' do
+      post = FactoryGirl.create(:post)
+      visit posts_path
+      click_link 'Edit'
+      expect(page.status_code).to eq(200)
+    end
+  end
+
 end

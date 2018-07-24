@@ -10,6 +10,10 @@ Development version of the BetterOn Portal
 - Restart postgres server
 - brew services restart postgresql
 
+## Bootstrap
+- Don't use bootstrap sass
+- Install bootstrap 4 (don't need sprockets)
+
 ## Models
 - Team
 - x User
