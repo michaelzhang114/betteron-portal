@@ -22,9 +22,9 @@ Development version of the BetterOn Portal
 - Video (nested in Post)
 
 ## Features
-- Lesson breakdown; each lesson can have numerous videos
-- Lessons can act as checkpoints, thus gamifying the experience
-- Possibly having courses->lessons->videos?
+- Sharing videos amongst team (video specific)
+
+
 - Discuss a "review functionality"
 - Coaches can access team
 - Admin can assign users with different permissions and distribute teams
@@ -34,7 +34,10 @@ Development version of the BetterOn Portal
 - BetterOn DIY signup
 - Video-level feedback mechanism; text/comments-based
 - Modular feedback videos
-- Sharing videos amongst team (video specific)
+
+- Lesson breakdown; each lesson can have numerous videos
+- Lessons can act as checkpoints, thus gamifying the experience
+- Possibly having courses->lessons->videos?
 
 ## Levels of access
 - Admin
@@ -44,6 +47,7 @@ Development version of the BetterOn Portal
 ## To-do
 - Make the nested routes test more rigorous
 - Test for permissions
+- Block non-admin users from accessing admin
 
 ## Discussion
 - Make us rethink the training program

@@ -36,6 +36,8 @@ gem 'factory_girl_rails', '~> 4.9'
 gem 'pundit', '~> 2.0'
 gem 'puma', '~> 3.12'
 gem 'gritter', '~> 1.2'
+gem 'administrate', '~> 0.10.0'
+gem 'bourbon', '~> 5.1'
 
 
 # Use Capistrano for deployment

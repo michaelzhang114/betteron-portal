@@ -11,7 +11,7 @@ describe 'navigate' do
     login_as(@user, :scope => :user)
   end
 
-  # can see all posts
+  # can see posts
   describe 'index' do
     it 'can be reached successfully' do
       visit posts_path
