@@ -12,9 +12,9 @@ class VideosController < ApplicationController
     end
     #authorize(@video)
     #@videos = policy_scope(Video)
-    @user = User.find(params[:user_id])
-    video  = Video.new(user_id: @user.id)
-    authorize idea
+    # @user = User.find(params[:user_id])
+    # video  = Video.new(user_id: @user.id)
+    # authorize idea
   end
 
   def show
