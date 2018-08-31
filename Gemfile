@@ -51,7 +51,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console', '~> 2.0'
+  gem 'web-console', '~> 3.6', '>= 3.6.2'
   gem 'spring'
   gem 'bullet', '~> 5.7', '>= 5.7.5'
 end

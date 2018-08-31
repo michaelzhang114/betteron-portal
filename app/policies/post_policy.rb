@@ -5,6 +5,9 @@ class PostPolicy < ApplicationPolicy
   def show?
     record.user_id == user.id
   end
+  def index?
+    record.user_id == user.id
+  end
 
   class Scope
     attr_reader :user, :scope

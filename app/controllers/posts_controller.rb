@@ -34,7 +34,7 @@ class PostsController < ApplicationController
 
   def show
     set_post
-    authorize @post
+    authorize(@post)
   end
 
   private
